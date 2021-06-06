@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Main Page</h1>
+
+<table class="ui table">
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @main_menus.each do |main_menu| %>
+      <tr>
+        <td><%= link_to main_menu.id, main_menu %></td>
+        <td><%= link_to 'Edit', edit_main_menu_path(main_menu) %></td>
+        <td><%= link_to 'Destroy', main_menu, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Main Menu', new_main_menu_path %>
